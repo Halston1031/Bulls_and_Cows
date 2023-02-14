@@ -15,26 +15,26 @@ namespace H10872020
             int[] arr = new int[4];
             int[] arr1 = new int[4];
             var input = new char[1];
-            Random rand = new Random();
-            for (int i = 0; i < 4; i++)
-            {
-                arr[i] = rand.Next(1, 10);
-                for (int j = 0; j < i; j++)
-                {
-                    while (arr[j] == arr[i])   
-                    {
-                        j = 0; 
-                        arr[i] = rand.Next(1, 10); 
-                    }
-                }
-            }
-            Console.Write("Secret number is: ");
-            for (int i = 0; i < 4; i++)
-            {
-                Console.Write($"{arr[i]}");
-            }
             do
             {
+                Random rand = new Random();
+                for (int i = 0; i < 4; i++)
+                {
+                    arr[i] = rand.Next(1, 10);
+                    for (int j = 0; j < i; j++)
+                    {
+                        while (arr[j] == arr[i])
+                        {
+                            j = 0;
+                            arr[i] = rand.Next(1, 10);
+                        }
+                    }
+                }
+                Console.Write("Secret number is: ");
+                for (int i = 0; i < 4; i++)
+                {
+                    Console.Write($"{arr[i]}");
+                }
                 do
                 {
                     A = 0;
@@ -71,6 +71,8 @@ namespace H10872020
                 Console.WriteLine("Play again?(y|n)");
                 input[0] = Console.ReadKey().KeyChar;
             } while (input[0] == 'y');
+            if (input[0] == 'n')
+                Console.WriteLine("\nBye!");
             Console.ReadKey();
         }
     }
