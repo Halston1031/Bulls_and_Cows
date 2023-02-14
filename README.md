@@ -1,1 +1,3 @@
-# H10872020
+# Bulls and Cows
+### Usage
+- Visual Studio
