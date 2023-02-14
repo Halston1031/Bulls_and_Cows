@@ -71,8 +71,7 @@ namespace H10872020
                 Console.WriteLine("Play again?(y|n)");
                 input[0] = Console.ReadKey().KeyChar;
             } while (input[0] == 'y');
-            if (input[0] == 'n')
-                Console.WriteLine("\nBye!");
+            Console.WriteLine("\nBye!");
             Console.ReadKey();
         }
     }
